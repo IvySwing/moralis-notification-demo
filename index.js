@@ -7,6 +7,7 @@ app.use(express.json());
 
 app.post("/webhook", (req, res) => {
   const webhook = req.body;
+  //console.log(webhook);
   for (const erc20Transfer of webhook.erc20Transfers) {
     const addrs = `${erc20Transfer.from.slice(
       0,
